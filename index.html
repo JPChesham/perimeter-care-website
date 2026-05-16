@@ -1,133 +1,943 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#000000</title>
-    <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
-    <style>
-        :root {
-            --color: #000000;
-            --color-transparent: #00000022;
-        }
-
-        ::selection {
-            background: var(--color-transparent);
-        }
-
-        html,
-        body {
-            background: var(--color);
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        #color {
-            background: white;
-            color: var(--color);
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 2.25rem 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-            cursor: text;
-        }
-    </style>
-</head>
-
-<body>
-    <p id="color">#000000</p>
+  <head>
     <script>
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-
-        function hslToHex(h, s, l) {
-            h /= 360;
-            s /= 100;
-            l /= 100;
-            var r = void 0,
-                g = void 0,
-                b = void 0;
-            if (s === 0) {
-                r = g = b = l; // achromatic
-            } else {
-                var hue2rgb = function hue2rgb(p, q, t) {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1 / 6) return p + (q - p) * 6 * t;
-                    if (t < 1 / 2) return q;
-                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-                    return p;
-                };
-                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                var p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1 / 3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1 / 3);
-            }
-            var toHex = function toHex(x) {
-                var hex = Math.round(x * 255).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            };
-            return '#' + toHex(r) + toHex(g) + toHex(b);
-        }
-
-        window.onload = function () {
-            let stopProp = function (ev) {
-                ev.stopPropagation();
-            }
-
-            var colorElement = document.getElementById("color");
-            colorElement.addEventListener("click", stopProp, false);
-            colorElement.addEventListener("mousedown", stopProp, false);
-
-            var setFavicon = function (hex) {
-                var canvas = document.createElement('canvas');
-                canvas.width = 16;
-                canvas.height = 16;
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = hex;
-                ctx.fillRect(0, 0, 16, 16);
-                document.getElementsByTagName('link')[0].href = canvas.toDataURL("image/x-icon");
-            }
-
-            var setRandomColor = function setRandomColor() {
-                var h = void 0,
-                    s = void 0,
-                    l = void 0;
-
-                h = randomInt(0, 359);
-                s = randomInt(55, 75);
-                l = randomInt(40, 60);
-
-                document.documentElement.style.setProperty('--color', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
-                var hex = hslToHex(h, s, l);
-                document.title = hex;
-                colorElement.innerHTML = hex;
-                document.documentElement.style.setProperty('--color-transparent', hex + '22');
-
-                setFavicon(hex);
-            };
-            setRandomColor();
-
-            var body = document.getElementsByTagName("body")[0];
-            body.addEventListener("mousedown", function (ev) {
-                ev.preventDefault();
-            });
-            body.addEventListener("click", function () {
-                setRandomColor();
-            }, false);
-        };
+      window.FontAwesomeConfig = {
+        autoReplaceSvg: "nest",
+      };
     </script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perimeter Care - Landscape & Gardening</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              forest: "#1B4332",
+              earth: "#8B5A2B",
+              slate: "#374151",
+              accent: "#EAB308",
+              light: "#F9FAFB",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate font-sans antialiased m-0 p-0">
+    <!-- Navigation -->
+    <nav
+      id="header"
+      class="w-full bg-white border-b border-gray-100 sticky top-0 z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-leaf text-forest text-2xl"></i>
+          <span class="font-serif font-bold text-2xl text-forest tracking-tight"
+            >Perimeter Care</span
+          >
+        </div>
 
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#services"
+            class="text-sm font-medium text-slate hover:text-forest transition-colors"
+            >Services</a
+          >
+          <a
+            href="#projects"
+            class="text-sm font-medium text-slate hover:text-forest transition-colors"
+            >Our Work</a
+          >
+          <a
+            href="#about"
+            class="text-sm font-medium text-slate hover:text-forest transition-colors"
+            >About</a
+          >
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="tel:+1234567890"
+            class="hidden lg:flex items-center gap-2 text-sm font-medium text-forest"
+          >
+            <i class="fa-solid fa-phone"></i> (555) 123-4567
+          </a>
+          <button
+            class="bg-accent hover:bg-yellow-400 text-slate font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-sm"
+          >
+            Get a Quote
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative w-full h-[600px] flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 w-full h-full">
+        <img
+          class="w-full h-full object-cover"
+          src="https://storage.googleapis.com/uxpilot-auth.appspot.com/adb5da1cb2-60c3f71bf50165c16901.png"
+          alt="Beautifully landscaped luxury garden with pristine lawn, modern decking, and vibrant borders, cinematic lighting, high quality"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div
+          class="bg-white/95 backdrop-blur-sm p-10 md:p-14 rounded-2xl shadow-2xl max-w-3xl mx-auto"
+        >
+          <h1
+            class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-forest mb-6 leading-tight"
+          >
+            Transforming Outdoor Spaces
+          </h1>
+          <p
+            class="text-lg md:text-xl text-slate mb-8 max-w-2xl mx-auto leading-relaxed"
+          >
+            Expert landscaping, decking, and garden maintenance across the
+            region. We bring your vision to life with premium craftsmanship and
+            sustainable practices.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-accent hover:bg-yellow-400 text-slate font-semibold px-8 py-4 rounded-full text-lg transition-all shadow-md"
+            >
+              Request Free Estimate
+            </button>
+            <button
+              class="bg-white border-2 border-forest text-forest hover:bg-forest hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all"
+            >
+              View Our Services
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="font-serif text-3xl md:text-4xl font-bold text-forest mb-4"
+          >
+            Complete Landscaping Solutions
+          </h2>
+          <p class="text-slate text-lg">
+            From routine maintenance to complete garden transformations, our
+            skilled team handles every aspect of your outdoor space.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9417a17e93-622676da1f2f3762976d.png"
+                alt="High quality paving and flagging in a modern garden, clean lines"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Flagging & Paving
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Premium stone and concrete flagging for durable, beautiful
+                pathways and patios.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0df7a8017c-60cc4a424aa1968c9504.png"
+                alt="Luxury timber decking installation in a garden, sunny day"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Decking
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Custom timber and composite decking solutions to extend your
+                living space outdoors.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a0b32ce7f8-e393a09a8417e862eba9.png"
+                alt="Beautifully planted garden borders with colorful flowers and shrubs"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Borders & Maintenance
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Expert planting, edging, and ongoing garden maintenance to keep
+                your space thriving.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/90fb8e2ef7-68afbba9b9a3875b58de.png"
+                alt="Modern block paved driveway installation"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Driveways
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Hard-wearing, attractive driveway installations including block
+                paving and resin bound.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c64fa0f93a-46fc93f3467817064e7d.png"
+                alt="Sturdy wooden garden fencing and robust gate"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Fences & Gates
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Secure, stylish fencing lines and custom gates to protect and
+                define your property.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/43a85d1a8e-4b5ac86b53ad58480de3.png"
+                alt="Tranquil garden pond with water feature and aquatic plants"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Ponds & Water Features
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Design and installation of serene water features, ponds, and
+                aquatic environments.
+              </p>
+              <a
+                href="#"
+                class="text-accent font-semibold text-sm flex items-center gap-1 hover:text-yellow-600"
+                >Learn more <i class="fa-solid fa-arrow-right text-xs"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-slate mb-4">
+            Looking for something else? We also specialize in Cladding and
+            Complete Re-landscaping.
+          </p>
+          <button
+            class="bg-forest text-white font-semibold px-8 py-3 rounded-full hover:bg-forest/90 transition-all"
+          >
+            View All Services
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="font-serif text-3xl md:text-4xl font-bold text-forest mb-4"
+          >
+            Why Choose Perimeter Care
+          </h2>
+          <p class="text-slate text-lg">
+            Decades of experience, unmatched quality, and a commitment to
+            exceeding expectations on every project.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-all duration-300"
+            >
+              <i
+                class="fa-solid fa-award text-3xl text-accent group-hover:text-slate transition-colors"
+              ></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest mb-3">
+              25+ Years Experience
+            </h3>
+            <p class="text-slate text-sm">
+              Trusted by thousands of homeowners across the region for quality
+              craftsmanship.
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-all duration-300"
+            >
+              <i
+                class="fa-solid fa-shield-halved text-3xl text-accent group-hover:text-slate transition-colors"
+              ></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest mb-3">
+              Fully Insured
+            </h3>
+            <p class="text-slate text-sm">
+              Complete peace of mind with comprehensive liability and workers'
+              compensation coverage.
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-all duration-300"
+            >
+              <i
+                class="fa-solid fa-leaf text-3xl text-accent group-hover:text-slate transition-colors"
+              ></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest mb-3">
+              Eco-Friendly
+            </h3>
+            <p class="text-slate text-sm">
+              Sustainable practices and materials that respect the environment
+              and your garden.
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-all duration-300"
+            >
+              <i
+                class="fa-solid fa-clock text-3xl text-accent group-hover:text-slate transition-colors"
+              ></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest mb-3">
+              On-Time Delivery
+            </h3>
+            <p class="text-slate text-sm">
+              Projects completed on schedule with clear communication every step
+              of the way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work Section -->
+    <section id="projects" class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="font-serif text-3xl md:text-4xl font-bold text-forest mb-4"
+          >
+            Recent Projects
+          </h2>
+          <p class="text-slate text-lg">
+            See how we've transformed outdoor spaces for our satisfied clients.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/project1-modern-garden-transformation.png"
+                alt="Modern garden transformation with paving and borders"
+              />
+              <div
+                class="absolute top-4 right-4 bg-accent text-slate px-3 py-1 rounded-full text-xs font-semibold"
+              >
+                Complete Re-landscape
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Modern Garden Transformation
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Complete redesign featuring contemporary paving, raised borders,
+                and low-maintenance planting scheme.
+              </p>
+              <p class="text-xs text-slate/60">
+                <i class="fa-solid fa-location-dot mr-1"></i>Greenfield, GF
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/project2-luxury-decking-install.png"
+                alt="Luxury multi-level decking installation"
+              />
+              <div
+                class="absolute top-4 right-4 bg-accent text-slate px-3 py-1 rounded-full text-xs font-semibold"
+              >
+                Decking
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Multi-Level Decking
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Stunning composite decking with integrated lighting and built-in
+                seating areas.
+              </p>
+              <p class="text-xs text-slate/60">
+                <i class="fa-solid fa-location-dot mr-1"></i>Riverside, RS
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+          >
+            <div class="h-64 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/project3-driveway-paving.png"
+                alt="Block paved driveway installation"
+              />
+              <div
+                class="absolute top-4 right-4 bg-accent text-slate px-3 py-1 rounded-full text-xs font-semibold"
+              >
+                Driveways
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-forest mb-2">
+                Block Paved Driveway
+              </h3>
+              <p class="text-sm text-slate mb-4">
+                Premium block paving with decorative border and enhanced
+                drainage system.
+              </p>
+              <p class="text-xs text-slate/60">
+                <i class="fa-solid fa-location-dot mr-1"></i>Oakwood, OW
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button
+            class="bg-forest text-white font-semibold px-8 py-3 rounded-full hover:bg-forest/90 transition-all"
+          >
+            View Full Portfolio
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Carousel -->
+    <section id="reviews" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="font-serif text-3xl md:text-4xl font-bold text-forest mb-4"
+          >
+            What Our Clients Say
+          </h2>
+          <p class="text-slate text-lg">
+            Don't just take our word for it – hear from our satisfied customers.
+          </p>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto">
+          <div id="reviews-carousel" class="overflow-hidden">
+            <div
+              id="reviews-track"
+              class="flex transition-transform duration-500 ease-in-out"
+            >
+              <!-- Review 1 -->
+              <div class="min-w-full px-4">
+                <div class="bg-light rounded-2xl p-10 md:p-12">
+                  <div class="flex items-center gap-1 mb-6 justify-center">
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                  </div>
+                  <p
+                    class="text-slate text-lg md:text-xl text-center mb-8 leading-relaxed italic"
+                  >
+                    "Perimeter Care transformed our tired garden into an
+                    absolute paradise. The team was professional, punctual, and
+                    the quality of workmanship exceeded our expectations. Our
+                    new decking and patio area is the envy of the neighborhood!"
+                  </p>
+                  <div class="flex items-center justify-center gap-4">
+                    <img
+                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
+                      alt="Sarah Mitchell"
+                      class="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="font-semibold text-forest">Sarah Mitchell</p>
+                      <p class="text-sm text-slate">Homeowner, Greenfield</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="min-w-full px-4">
+                <div class="bg-light rounded-2xl p-10 md:p-12">
+                  <div class="flex items-center gap-1 mb-6 justify-center">
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                  </div>
+                  <p
+                    class="text-slate text-lg md:text-xl text-center mb-8 leading-relaxed italic"
+                  >
+                    "Outstanding service from start to finish. They redesigned
+                    our entire front garden including a new driveway and it
+                    looks incredible. The attention to detail and communication
+                    throughout was first-class. Highly recommended!"
+                  </p>
+                  <div class="flex items-center justify-center gap-4">
+                    <img
+                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg"
+                      alt="James Robertson"
+                      class="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="font-semibold text-forest">James Robertson</p>
+                      <p class="text-sm text-slate">Property Owner, Oakwood</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="min-w-full px-4">
+                <div class="bg-light rounded-2xl p-10 md:p-12">
+                  <div class="flex items-center gap-1 mb-6 justify-center">
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                    <i class="fa-solid fa-star text-accent text-xl"></i>
+                  </div>
+                  <p
+                    class="text-slate text-lg md:text-xl text-center mb-8 leading-relaxed italic"
+                  >
+                    "We've used Perimeter Care for several projects over the
+                    years and they never disappoint. From fencing to pond
+                    installation, every job is completed to the highest
+                    standard. Reliable, trustworthy, and excellent value for
+                    money."
+                  </p>
+                  <div class="flex items-center justify-center gap-4">
+                    <img
+                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg"
+                      alt="Emma Clarke"
+                      class="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="font-semibold text-forest">Emma Clarke</p>
+                      <p class="text-sm text-slate">Homeowner, Riverside</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button
+            id="prev-review"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-forest hover:bg-accent hover:text-slate transition-all"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            id="next-review"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-forest hover:bg-accent hover:text-slate transition-all"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- Dots -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              class="review-dot w-3 h-3 rounded-full bg-accent transition-all"
+              data-index="0"
+            ></button>
+            <button
+              class="review-dot w-3 h-3 rounded-full bg-gray-300 transition-all"
+              data-index="1"
+            ></button>
+            <button
+              class="review-dot w-3 h-3 rounded-full bg-gray-300 transition-all"
+              data-index="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer CTA & Contact -->
+    <footer id="footer" class="bg-forest text-white pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <!-- Contact Form Section -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 mb-16">
+          <div class="max-w-3xl mx-auto text-center mb-10">
+            <h2
+              class="font-serif text-3xl md:text-4xl font-bold text-white mb-4"
+            >
+              Get Your Free Quote
+            </h2>
+            <p class="text-gray-300 text-lg">
+              Tell us about your project and we'll get back to you within 24
+              hours
+            </p>
+          </div>
+
+          <form class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-200 mb-2"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  placeholder="John Smith"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-200 mb-2"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  placeholder="john@example.com"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-200 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  placeholder="(555) 123-4567"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-200 mb-2"
+                  >Service Interested In</label
+                >
+                <select
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                >
+                  <option value="">Select a service</option>
+                  <option value="flagging">Flagging & Paving</option>
+                  <option value="decking">Decking</option>
+                  <option value="borders">Borders & Maintenance</option>
+                  <option value="driveways">Driveways</option>
+                  <option value="fences">Fences & Gates</option>
+                  <option value="ponds">Ponds & Water Features</option>
+                  <option value="cladding">Cladding</option>
+                  <option value="landscape">Complete Re-landscape</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-200 mb-2"
+                >Project Details</label
+              >
+              <textarea
+                rows="5"
+                placeholder="Tell us about your project requirements, timeline, and any specific details..."
+                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
+              ></textarea>
+            </div>
+
+            <div class="flex justify-center">
+              <button
+                type="submit"
+                class="bg-accent hover:bg-yellow-400 text-slate font-semibold px-10 py-4 rounded-full text-lg transition-all shadow-lg flex items-center gap-2"
+              >
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <div class="col-span-1 lg:col-span-2">
+            <div class="flex items-center gap-2 mb-6">
+              <i class="fa-solid fa-leaf text-accent text-2xl"></i>
+              <span class="font-serif font-bold text-2xl tracking-tight"
+                >Perimeter Care</span
+              >
+            </div>
+            <p class="text-gray-300 mb-8 max-w-md">
+              Your trusted local experts in garden design, landscape
+              architecture, and outdoor maintenance. We build spaces that last.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-slate transition-all"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-slate transition-all"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-slate transition-all"
+                ><i class="fa-brands fa-houzz"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-serif text-lg font-bold mb-6 text-accent">
+              Quick Links
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Our Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Project Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-serif text-lg font-bold mb-6 text-accent">
+              Contact
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-gray-300">
+                <i class="fa-solid fa-location-dot mt-1 text-accent"></i>
+                <span>123 Landscape Way,<br />Greenfield, GF1 2XY</span>
+              </li>
+              <li class="flex items-center gap-3 text-gray-300">
+                <i class="fa-solid fa-phone text-accent"></i>
+                <span>(555) 123-4567</span>
+              </li>
+              <li class="flex items-center gap-3 text-gray-300">
+                <i class="fa-solid fa-envelope text-accent"></i>
+                <span>hello@perimetercare.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
+        >
+          <p>&copy; 2024 Perimeter Care Landscaping. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener("load", function () {
+        let currentIndex = 0;
+        const reviewsTrack = document.getElementById("reviews-track");
+        const reviewDots = document.querySelectorAll(".review-dot");
+        const prevBtn = document.getElementById("prev-review");
+        const nextBtn = document.getElementById("next-review");
+
+        // Review Carousel Logic
+        function showReview(index) {
+          reviewsTrack.style.transform = `translateX(-${index * 100}%)`;
+          reviewDots.forEach((dot, i) => {
+            dot.classList.toggle("bg-accent", i === index);
+          });
+        }
+
+        function goToNext() {
+          currentIndex = (currentIndex + 1) % reviewDots.length;
+          showReview(currentIndex);
+        }
+
+        function goToPrev() {
+          currentIndex =
+            (currentIndex - 1 + reviewDots.length) % reviewDots.length;
+          showReview(currentIndex);
+        }
+
+        // Add event listeners
+        nextBtn.addEventListener("click", goToNext);
+        prevBtn.addEventListener("click", goToPrev);
+
+        // Add click event to dots
+        reviewDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentIndex = index;
+            showReview(currentIndex);
+          });
+        });
+
+        // Auto-rotate every 5 seconds
+        setInterval(goToNext, 5000);
+      });
+    </script>
+  </body>
 </html>
