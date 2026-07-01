@@ -66,7 +66,9 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between"
       >
         <div class="flex items-center gap-2 min-w-0">
-          <i class="fa-solid fa-leaf text-forest text-xl md:text-2xl shrink-0"></i>
+          <i
+            class="fa-solid fa-leaf text-forest text-xl md:text-2xl shrink-0"
+          ></i>
           <span
             class="font-serif font-bold text-lg sm:text-xl md:text-2xl text-forest tracking-tight truncate"
             >Perimeter Care</span
@@ -79,11 +81,11 @@
             class="text-sm font-medium text-slate hover:text-forest transition-colors"
             >Services</a
           >
-          <a
+          <!-- <a
             href="#projects"
             class="text-sm font-medium text-slate hover:text-forest transition-colors"
             >Our Work</a
-          >
+          > -->
           <a
             href="#why-choose"
             class="text-sm font-medium text-slate hover:text-forest transition-colors"
@@ -93,22 +95,26 @@
 
         <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
           <a
-            href="tel:+1234567890"
+            href="tel:+447926840984"
             class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full text-forest hover:bg-light transition-colors"
             aria-label="Call us"
           >
             <i class="fa-solid fa-phone text-lg"></i>
           </a>
           <a
-            href="tel:+1234567890"
+            href="tel:+447926840984"
             class="hidden lg:flex items-center gap-2 text-sm font-medium text-forest"
           >
-            <i class="fa-solid fa-phone"></i> (555) 123-4567
+            <i class="fa-solid fa-phone"></i> 07926 840984
           </a>
           <button
             type="button"
             class="hidden md:inline-flex bg-accent hover:bg-yellow-400 text-slate font-semibold px-5 lg:px-6 py-2.5 rounded-full text-sm transition-all shadow-sm items-center justify-center"
-            onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+            onclick="
+              document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
           >
             Get a Quote
           </button>
@@ -121,7 +127,10 @@
             aria-label="Open menu"
           >
             <i class="fa-solid fa-bars text-lg" id="mobile-menu-icon-open"></i>
-            <i class="fa-solid fa-xmark text-lg hidden" id="mobile-menu-icon-close"></i>
+            <i
+              class="fa-solid fa-xmark text-lg hidden"
+              id="mobile-menu-icon-close"
+            ></i>
           </button>
         </div>
       </div>
@@ -135,11 +144,11 @@
           class="mobile-nav-link block py-3 text-slate hover:text-forest transition-colors border-b border-gray-50"
           >Services</a
         >
-        <a
+        <!-- <a
           href="#projects"
           class="mobile-nav-link block py-3 text-slate hover:text-forest transition-colors border-b border-gray-50"
           >Our Work</a
-        >
+        > -->
         <a
           href="#why-choose"
           class="mobile-nav-link block py-3 text-slate hover:text-forest transition-colors border-b border-gray-50"
@@ -148,7 +157,11 @@
         <button
           type="button"
           class="mobile-nav-link w-full bg-accent hover:bg-yellow-400 text-slate font-semibold py-3 px-6 rounded-full text-sm transition-all shadow-sm mt-4"
-          onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+          onclick="
+            document
+              .getElementById('contact')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
         >
           Get a Quote
         </button>
@@ -169,7 +182,9 @@
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div
+        class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 text-center"
+      >
         <div
           class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 md:p-10 lg:p-14 rounded-2xl shadow-2xl max-w-3xl mx-auto"
         >
@@ -187,8 +202,8 @@
             >
             <span class="hidden md:inline"
               >Expert landscaping, decking, and garden maintenance across the
-              region. We bring your vision to life with premium craftsmanship and
-              sustainable practices.</span
+              region. We bring your vision to life with premium craftsmanship
+              and sustainable practices.</span
             >
           </p>
           <div
@@ -197,14 +212,22 @@
             <button
               type="button"
               class="w-full sm:w-auto bg-accent hover:bg-yellow-400 text-slate font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg transition-all shadow-md"
-              onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+              onclick="
+                document
+                  .getElementById('contact')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
             >
               Request Free Estimate
             </button>
             <button
               type="button"
               class="w-full sm:w-auto bg-white border-2 border-forest text-forest hover:bg-forest hover:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg transition-all"
-              onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })"
+              onclick="
+                document
+                  .getElementById('services')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
             >
               View Our Services
             </button>
@@ -414,7 +437,11 @@
           <button
             type="button"
             class="bg-forest text-white font-semibold px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base hover:bg-forest/90 transition-all"
-            onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })"
+            onclick="
+              document
+                .getElementById('services')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
           >
             View All Services
           </button>
@@ -431,9 +458,24 @@
           >
             Why Choose Perimeter Care
           </h2>
+          <p
+            class="text-slate text-sm sm:text-base md:text-lg leading-relaxed mb-4"
+          >
+            Based in Barnsley, Perimeter Care is a local landscaping team built
+            on quality workmanship, honest advice, and outdoor spaces that are
+            made to last.
+          </p>
+          <p
+            class="text-slate text-sm sm:text-base md:text-lg leading-relaxed mb-4"
+          >
+            Whether you need a full garden transformation, new decking, paving,
+            or ongoing maintenance, we take pride in doing the job properly —
+            from the first site visit through to the final tidy-up.
+          </p>
           <p class="text-slate text-sm sm:text-base md:text-lg leading-relaxed">
-            Decades of experience, unmatched quality, and a commitment to
-            exceeding expectations on every project.
+            We treat every project like our own, with clear communication,
+            reliable scheduling, and finishes you can be proud of for years to
+            come.
           </p>
         </div>
 
@@ -451,11 +493,11 @@
             <h3
               class="font-serif text-lg md:text-xl font-bold text-forest mb-2 md:mb-3"
             >
-              25+ Years Experience
+              15+ Years Experience
             </h3>
             <p class="text-slate text-sm">
-              Trusted by thousands of homeowners across the region for quality
-              craftsmanship.
+              Trusted by homeowners across South Yorkshire for quality
+              craftsmanship and dependable service.
             </p>
           </div>
 
@@ -474,7 +516,8 @@
             </h3>
             <p class="text-slate text-sm">
               Complete peace of mind with comprehensive liability and workers'
-              compensation coverage.
+              compensation coverage, plus solid guarantees on all completed
+              work.
             </p>
           </div>
 
@@ -519,8 +562,8 @@
       </div>
     </section>
 
-    <!-- Recent Work Section -->
-    <section id="projects" class="py-12 md:py-20 lg:py-24 bg-light">
+    <!-- Recent Work Section (hidden until real portfolio photos are available) -->
+    <section id="projects" class="hidden py-12 md:py-20 lg:py-24 bg-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2
@@ -634,7 +677,11 @@
           <button
             type="button"
             class="bg-forest text-white font-semibold px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base hover:bg-forest/90 transition-all"
-            onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
+            onclick="
+              document
+                .getElementById('projects')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
           >
             View Full Portfolio
           </button>
@@ -642,8 +689,8 @@
       </div>
     </section>
 
-    <!-- Reviews Carousel -->
-    <section id="reviews" class="py-12 md:py-20 lg:py-24 bg-white">
+    <!-- Reviews Carousel (hidden until real testimonials are available) -->
+    <section id="reviews" class="hidden py-12 md:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2
@@ -665,12 +712,24 @@
               <!-- Review 1 -->
               <div class="min-w-full px-1 sm:px-2 md:px-4">
                 <div class="bg-light rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
-                  <div class="flex items-center gap-1 mb-4 md:mb-6 justify-center">
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
+                  <div
+                    class="flex items-center gap-1 mb-4 md:mb-6 justify-center"
+                  >
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
                   </div>
                   <p
                     class="text-slate text-sm sm:text-base md:text-lg lg:text-xl text-center mb-6 md:mb-8 leading-relaxed italic"
@@ -701,12 +760,24 @@
               <!-- Review 2 -->
               <div class="min-w-full px-1 sm:px-2 md:px-4">
                 <div class="bg-light rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
-                  <div class="flex items-center gap-1 mb-4 md:mb-6 justify-center">
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
+                  <div
+                    class="flex items-center gap-1 mb-4 md:mb-6 justify-center"
+                  >
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
                   </div>
                   <p
                     class="text-slate text-sm sm:text-base md:text-lg lg:text-xl text-center mb-6 md:mb-8 leading-relaxed italic"
@@ -737,12 +808,24 @@
               <!-- Review 3 -->
               <div class="min-w-full px-1 sm:px-2 md:px-4">
                 <div class="bg-light rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
-                  <div class="flex items-center gap-1 mb-4 md:mb-6 justify-center">
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
-                    <i class="fa-solid fa-star text-accent text-lg md:text-xl"></i>
+                  <div
+                    class="flex items-center gap-1 mb-4 md:mb-6 justify-center"
+                  >
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star text-accent text-lg md:text-xl"
+                    ></i>
                   </div>
                   <p
                     class="text-slate text-sm sm:text-base md:text-lg lg:text-xl text-center mb-6 md:mb-8 leading-relaxed italic"
@@ -817,7 +900,10 @@
     </section>
 
     <!-- Footer CTA & Contact -->
-    <footer id="footer" class="bg-forest text-white pt-12 pb-8 md:pt-20 md:pb-10">
+    <footer
+      id="footer"
+      class="bg-forest text-white pt-12 pb-8 md:pt-20 md:pb-10"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Contact Form Section -->
         <div
@@ -830,7 +916,9 @@
             >
               Get Your Free Quote
             </h2>
-            <p class="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p
+              class="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed"
+            >
               Tell us about your project and we'll get back to you within 24
               hours
             </p>
@@ -842,7 +930,9 @@
             action="#"
             method="post"
           >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6"
+            >
               <div>
                 <label class="block text-sm font-medium text-gray-200 mb-2"
                   >Full Name *</label
@@ -867,7 +957,9 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6"
+            >
               <div>
                 <label class="block text-sm font-medium text-gray-200 mb-2"
                   >Phone Number</label
@@ -875,7 +967,7 @@
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="(555) 123-4567"
+                  placeholder="07926 840984"
                   class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
@@ -985,7 +1077,7 @@
                   >Our Services</a
                 >
               </li>
-              <li>
+              <!-- <li>
                 <a
                   href="#projects"
                   class="text-gray-300 hover:text-white transition-colors"
@@ -998,7 +1090,7 @@
                   class="text-gray-300 hover:text-white transition-colors"
                   >Testimonials</a
                 >
-              </li>
+              </li> -->
               <li>
                 <a
                   href="#contact"
@@ -1016,15 +1108,23 @@
             <ul class="space-y-4">
               <li class="flex items-start gap-3 text-gray-300">
                 <i class="fa-solid fa-location-dot mt-1 text-accent"></i>
-                <span>123 Landscape Way,<br />Greenfield, GF1 2XY</span>
+                <span>Barnsley,<br />South Yorkshire</span>
               </li>
               <li class="flex items-center gap-3 text-gray-300">
                 <i class="fa-solid fa-phone text-accent"></i>
-                <span>(555) 123-4567</span>
+                <a
+                  href="tel:+447926840984"
+                  class="hover:text-white transition-colors"
+                  >07926 840984</a
+                >
               </li>
               <li class="flex items-center gap-3 text-gray-300">
                 <i class="fa-solid fa-envelope text-accent"></i>
-                <span>hello@perimetercare.com</span>
+                <a
+                  href="mailto:perimetercare@yahoo.com"
+                  class="hover:text-white transition-colors"
+                  >perimetercare@yahoo.com</a
+                >
               </li>
             </ul>
           </div>
@@ -1033,7 +1133,7 @@
         <div
           class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
         >
-          <p>&copy; 2024 Perimeter Care Landscaping. All rights reserved.</p>
+          <p>&copy; 2026 Perimeter Care Landscaping. All rights reserved.</p>
           <div class="flex gap-6">
             <a href="#" class="hover:text-white">Privacy Policy</a>
             <a href="#" class="hover:text-white">Terms of Service</a>
@@ -1083,47 +1183,45 @@
           }
         });
 
-        let currentIndex = 0;
         const reviewsTrack = document.getElementById("reviews-track");
-        const reviewDots = document.querySelectorAll(".review-dot");
-        const prevBtn = document.getElementById("prev-review");
-        const nextBtn = document.getElementById("next-review");
+        if (reviewsTrack) {
+          let currentIndex = 0;
+          const reviewDots = document.querySelectorAll(".review-dot");
+          const prevBtn = document.getElementById("prev-review");
+          const nextBtn = document.getElementById("next-review");
 
-        // Review Carousel Logic
-        function showReview(index) {
-          reviewsTrack.style.transform = `translateX(-${index * 100}%)`;
-          reviewDots.forEach((dot, i) => {
-            const active = i === index;
-            dot.classList.toggle("bg-accent", active);
-            dot.classList.toggle("bg-gray-300", !active);
-          });
-        }
+          function showReview(index) {
+            reviewsTrack.style.transform = `translateX(-${index * 100}%)`;
+            reviewDots.forEach((dot, i) => {
+              const active = i === index;
+              dot.classList.toggle("bg-accent", active);
+              dot.classList.toggle("bg-gray-300", !active);
+            });
+          }
 
-        function goToNext() {
-          currentIndex = (currentIndex + 1) % reviewDots.length;
-          showReview(currentIndex);
-        }
-
-        function goToPrev() {
-          currentIndex =
-            (currentIndex - 1 + reviewDots.length) % reviewDots.length;
-          showReview(currentIndex);
-        }
-
-        // Add event listeners
-        nextBtn.addEventListener("click", goToNext);
-        prevBtn.addEventListener("click", goToPrev);
-
-        // Add click event to dots
-        reviewDots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            currentIndex = index;
+          function goToNext() {
+            currentIndex = (currentIndex + 1) % reviewDots.length;
             showReview(currentIndex);
-          });
-        });
+          }
 
-        // Auto-rotate every 5 seconds
-        setInterval(goToNext, 5000);
+          function goToPrev() {
+            currentIndex =
+              (currentIndex - 1 + reviewDots.length) % reviewDots.length;
+            showReview(currentIndex);
+          }
+
+          nextBtn.addEventListener("click", goToNext);
+          prevBtn.addEventListener("click", goToPrev);
+
+          reviewDots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+              currentIndex = index;
+              showReview(currentIndex);
+            });
+          });
+
+          setInterval(goToNext, 5000);
+        }
 
         const quoteForm = document.getElementById("quote-form");
         const formConfirmation = document.getElementById("form-confirmation");
